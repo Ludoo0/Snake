@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nach Tutorial</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="720" height="480"></canvas>
+    <script>
+      // Allgemeine Variablen
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      //   add funktion (nur zur Vereinfachung)
+      function add(x, y) {
+        ctx.fillRect(x, y, 29, 29);
+      }
+      //   draw Funktion (wird bei jedem Frame ausgelöst)
+      draw();
+      function draw() {
+        // Hintergrund erstellen
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Schlange erstellen
+        ctx.fillStyle = "white";
+        add(120, 180);
+        add(150, 180);
+        add(180, 180);
+        add(210, 180);
+        // Apfel erstellen
+        ctx.fillStyle = "lightgreen";
+        add(270, 300);
+      }
+    </script>
+  </body>
+</html>
